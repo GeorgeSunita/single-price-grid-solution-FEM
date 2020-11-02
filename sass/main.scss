@@ -1,0 +1,277 @@
+@import "abstracts/mixins";
+
+//universal reset //
+*
+{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+
+//sass variables//
+$color-primary1: hsl(179, 62%, 43%);
+$color-primary1-light:hsl(179, 55%, 49%);
+
+$color-primary2: hsl(71, 73%, 54%);
+
+
+$color-neutral1:hsl(204, 43%, 93%);
+$color-neutral2: hsl(217, 42%, 38%);
+
+$color-background-body:hsl(203, 17%, 91%);
+$color-background-container:#fff;
+html {
+
+    font-size: 16px;
+    font-weight:700;
+
+}
+body{
+    background-color: $color-background-body;    
+}
+
+.container{
+    width:50vw;
+    height:50vw;
+    margin:8rem auto 2rem auto; 
+    border-radius: 3px;
+    box-shadow: 0 2rem 5rem rgba(0,0,0, .2);
+    background-color: $color-background-container;
+}
+
+@include respond(tab-land){
+    .container{
+        width:50%;
+        height:70%;
+    }
+}
+
+@include respond(tab-port){
+    .container{
+        width:50vw;
+        height:70%;
+        flex-direction: column;
+    }   
+}
+@include respond(phone) {
+    .container{
+        width:50vw;
+        height:60%;
+        flex-direction: column;
+    }   
+}
+
+.main {  
+   
+    padding:1rem;
+    line-height: 1.6;   
+    letter-spacing: .9px;
+    
+    &__heading1{
+        margin-top:1.2rem;
+        margin-bottom: .5rem;
+        color:$color-primary1;
+    }
+    
+    &__heading2{
+        color:$color-primary2;
+        padding:2px;
+        margin-bottom: 1rem;
+    }
+    
+    &__para{
+        color:hsl(203, 19%, 73%);
+        font-weight: 400;
+    }
+}
+
+
+
+@include respond(tab-land) {
+    .main{
+        width:100%;
+        
+    }   
+}
+@include respond(tab-port) {
+    .main{
+        width:100%;
+    }   
+}
+
+@include respond(phone)  {
+    .main{
+        width:100%;
+        font-size: 85%;
+    }   
+}
+
+
+
+.sections {
+    width:50vw;
+    height:50vh;
+    display:flex; 
+    flex:1;  
+    letter-spacing: 1px;
+
+} 
+
+@include respond(tab-port) {
+    .sections{
+        width:50vw;
+        height:60%;
+        flex-direction: column;
+        justify-content: flex-start;
+    }  
+}
+
+@include respond(phone)  {
+    .sections{
+        width:50vw;
+        height:60%;
+        flex-direction: column;
+        font-size: 90%;
+        justify-content:space-evenly;
+    }   
+}
+
+
+.subscribe{  
+
+    flex:0 0 50%; 
+    
+    display:flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    
+    padding:1rem 1.5rem;
+        
+    background-color:  $color-primary1;
+    color:hsl(180, 26%, 84%);  
+    
+    
+    &__heading{
+        font-size:1.2rem;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+    }
+
+    &__subheading{
+        font-size:1.2rem;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+    }
+    
+    &__para{
+        font-size: 14px;
+        font-weight: 400;
+    }
+    
+    &__btn:link,
+    &__btn:visited {    
+        text-decoration: none;
+        text-align: center;
+        padding:10px 10px;  
+        margin-top:1rem;
+        border-radius: 4px;
+        transition: all .2s;
+        box-shadow: 2px -2px 3px rgba(73, 71, 71, 0.6);
+    }
+    
+    &__btn:hover {
+        background-color:darken($color-primary2, 10%); 
+        transform: translateY(-3px);
+    }
+    
+    &__btn:active{
+        transform: translateY(-1px);
+    }  
+    
+    .btn-yellow {
+        background-color:$color-primary2 ; 
+        color: hsl(180, 26%, 84%);
+    }
+
+}
+
+.big{
+    font-size: 1.4rem;
+}
+
+@include respond(phone) {
+    .subscribe{
+        justify-content: space-around;
+        padding: .5rem .5rem;
+        line-height: 1.6;
+
+        &__heading {
+            font-size:.9rem ;
+            
+        }  
+
+        &__subheading{
+            font-size:.6rem;
+            font-weight: 200;
+        }    
+
+        &__para{
+            font-size: 10px;
+            font-weight: 400;
+        }
+        
+    }
+    .big {
+        vertical-align: middle;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+}
+
+
+
+.why{
+    flex:0 0 50%;
+    justify-content: space-evenly;
+    
+    background-color: $color-primary1-light;
+    color:hsl(180, 26%, 84%);
+    
+    padding:1rem 1.5rem; 
+   
+         
+        
+    &__heading{
+        font-size:1.2rem;
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+    }
+    
+    &__details{
+        list-style: none;
+        font-size: .8;
+        font-weight: 100;
+        padding: 1px 0;     
+    } 
+}
+
+@include respond(phone) {
+    .why{
+        padding:.5rem .5rem;
+        font-size:70%;
+        line-height: 1.6;
+    }
+}
+
+
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
